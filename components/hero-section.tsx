@@ -1,0 +1,173 @@
+"use client"
+
+import { useEffect, useRef } from "react"
+
+function NetworkCanvas() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+
+    const ctx = canvas.getContext("2d")
+    if (!ctx) return
+
+    let animationId: number
+    const nodes: { x: number; y: number; vx: number; vy: number }[] = []
+    const nodeCount = 40
+
+    const resize = () => {
+      canvas.width = canvas.offsetWidth * window.devicePixelRatio
+      canvas.height = canvas.offsetHeight * window.devicePixelRatio
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio)
+    }
+    resize()
+    window.addEventListener("resize", resize)
+
+    for (let i = 0; i < nodeCount; i++) {
+      nodes.push({
+        x: Math.random() * canvas.offsetWidth,
+        y: Math.random() * canvas.offsetHeight,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+      })
+    }
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight)
+
+      for (const node of nodes) {
+        node.x += node.vx
+        node.y += node.vy
+        if (node.x < 0 || node.x > canvas.offsetWidth) node.vx *= -1
+        if (node.y < 0 || node.y > canvas.offsetHeight) node.vy *= -1
+      }
+
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x
+          const dy = nodes[i].y - nodes[j].y
+          const dist = Math.sqrt(dx * dx + dy * dy)
+          if (dist < 150) {
+            ctx.beginPath()
+            ctx.moveTo(nodes[i].x, nodes[j].y)
+            ctx.lineTo(nodes[j].x, nodes[j].y)
+            ctx.strokeStyle = `rgba(56, 189, 248, ${0.08 * (1 - dist / 150)})`
+            ctx.lineWidth = 1
+            ctx.stroke()
+          }
+        }
+      }
+
+      for (const node of nodes) {
+        ctx.beginPath()
+        ctx.arc(node.x, node.y, 1.5, 0, Math.PI * 2)
+        ctx.fillStyle = "rgba(56, 189, 248, 0.3)"
+        ctx.fill()
+      }
+
+      animationId = requestAnimationFrame(animate)
+    }
+    animate()
+
+    return () => {
+      cancelAnimationFrame(animationId)
+      window.removeEventListener("resize", resize)
+    }
+  }, [])
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 h-full w-full"
+      aria-hidden="true"
+    />
+  )
+}
+
+export default function HeroSection() {
+  return (
+    <section
+      id="hero"
+      className="relative flex min-h-screen items-center overflow-hidden"
+    >
+      <NetworkCanvas />
+
+      {/* Radial gradient overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at 30% 50%, hsl(187 100% 60% / 0.05) 0%, transparent 60%)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 mx-auto w-full max-w-4xl px-6 py-24 lg:px-12">
+        <div className="animate-fade-in-up">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-primary">
+            Bioinformatics & Healthcare
+          </p>
+          <h1 className="mb-6 text-balance text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl">
+            Bridging Biology
+            <br />
+            <span className="text-glow text-primary">
+              {"& Computation"}
+            </span>
+          </h1>
+          <p className="mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            Working at the intersection of genomics, data science, and
+            healthcare to transform biological data into actionable insights.
+            From sequence analysis to machine learning pipelines, I build the
+            tools that advance precision medicine.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="glow-cyan group inline-flex items-center gap-2 rounded-lg border border-primary bg-primary/10 px-6 py-3 text-sm font-medium text-primary transition-all hover:bg-primary/20"
+            >
+              View Projects
+              <svg
+                className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-medium text-muted-foreground transition-all hover:border-primary/50 hover:text-foreground"
+            >
+              Get in Touch
+            </a>
+          </div>
+        </div>
+
+        {/* Stats bar */}
+        <div className="mt-20 grid grid-cols-2 gap-6 border-t border-border pt-10 md:grid-cols-4">
+          {[
+            { label: "Publications", value: "12+" },
+            { label: "Genomes Analyzed", value: "50K+" },
+            { label: "ML Models Deployed", value: "8" },
+            { label: "Years Experience", value: "6+" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <p className="text-3xl font-bold text-primary">{stat.value}</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
