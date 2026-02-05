@@ -6,63 +6,63 @@ const CATEGORIES = ["All", "Tutorial", "Deep Dive", "Opinion"]
 
 const POSTS = [
   {
-    title: "Why I Stopped Trusting Variant Classifiers (And Built My Own)",
-    date: "Mar 15, 2024",
+    title: "How I Slashed Deployment Time by 75% with Kubernetes",
+    date: "Dec 10, 2025",
     category: "Deep Dive",
     excerpt:
-      "After months of inconsistent results from off-the-shelf variant classifiers, I dove into building a custom deep learning framework from scratch. Here's what I learned about the hidden assumptions baked into most genomic ML tools, and why rolling your own might be worth the effort.",
-    tags: ["Machine Learning", "Genomics", "Python"],
+      "At VetsEZ, our Spring Boot services took forever to ship. I containerized everything with Docker and orchestrated deployments via Kubernetes with auto-scaling. What used to take an afternoon now takes minutes. Here's the full breakdown of the migration, the gotchas with OData APIs, and why I'll never deploy without K8s again.",
+    tags: ["Kubernetes", "Docker", "Spring Boot"],
+    readTime: "10 min read",
+    featured: true,
+  },
+  {
+    title: "Building a Protein Sequence Explorer with Next.js and FastAPI",
+    date: "Sep 20, 2025",
+    category: "Tutorial",
+    excerpt:
+      "During my internship at Drexel, I built a full-stack app that lets researchers query and explore protein sequences. The frontend is Next.js with Tailwind, the backend is a Dockerized FastAPI ETL that generates association graphs in JSON. I walk through the architecture and the dataset analysis that informed the design.",
+    tags: ["Next.js", "FastAPI", "Bioinformatics"],
     readTime: "12 min read",
     featured: true,
   },
   {
-    title: "A Practical Guide to Cloud-Native Bioinformatics Pipelines",
-    date: "Nov 8, 2023",
+    title: "Using Langchain and RAG to Build a Budget-Friendly Recipe App",
+    date: "Jun 15, 2025",
     category: "Tutorial",
     excerpt:
-      "Bioinformatics pipelines are notoriously fragile. I spent a year migrating our lab's analysis stack to a containerized, event-driven architecture on AWS. This post walks through the entire setup, from Nextflow configs to auto-scaling strategies that actually work with sequencing data.",
-    tags: ["AWS", "Docker", "Nextflow"],
-    readTime: "8 min read",
+      "For Bruin Bites, my team and I used Langchain with retrieval-augmented generation to parse recipes, estimate costs, and extract nutritional info. This post covers prompt design iteration, the cross-platform Expo/React Native setup, and how Agile kept us shipping week over week.",
+    tags: ["Langchain", "RAG", "React Native"],
+    readTime: "9 min read",
     featured: false,
   },
   {
-    title: "The Case for Pharmacogenomics in Every Oncology Clinic",
-    date: "Sep 22, 2023",
+    title: "Why Legacy Systems Deserve Better APIs",
+    date: "Nov 3, 2025",
     category: "Opinion",
     excerpt:
-      "We have the data. We have the tools. So why are most oncology clinics still prescribing without pharmacogenomic profiling? I argue that the bottleneck isn't science -- it's software, and here's how we fix it.",
-    tags: ["Healthcare", "Precision Medicine"],
+      "VistA is a decades-old system that thousands of veterans depend on. Modernizing its access layer with Spring Boot and PostgreSQL instead of ripping it out taught me that good engineering is often about bridging the old and the new, not replacing it.",
+    tags: ["APIs", "PostgreSQL", "Healthcare"],
     readTime: "6 min read",
     featured: false,
   },
   {
-    title: "Graph Neural Networks for Drug Discovery: A Hands-On Walkthrough",
-    date: "Jun 4, 2022",
-    category: "Tutorial",
-    excerpt:
-      "Drug-gene interaction prediction sounds intimidating, but the code doesn't have to be. In this tutorial I walk through building a graph neural network from scratch using PyTorch Geometric, training it on real interaction data, and interpreting what the model actually learns.",
-    tags: ["GNN", "PyTorch", "Drug Discovery"],
-    readTime: "15 min read",
-    featured: true,
-  },
-  {
-    title: "Lessons from Building HIPAA-Compliant NLP at Scale",
-    date: "Feb 19, 2022",
+    title: "Schema Extraction with LLMs: Turning Messy Data into Clean JSON",
+    date: "Apr 8, 2025",
     category: "Deep Dive",
     excerpt:
-      "Clinical text is messy, sensitive, and full of abbreviations that would confuse any general-purpose NLP model. After shipping a HIPAA-compliant pipeline that processes 50k clinical notes a day, here are the hard lessons I wish someone had told me upfront.",
-    tags: ["NLP", "HIPAA", "Clinical Data"],
-    readTime: "10 min read",
+      "Schemaloom started as a side project to solve a real pain point: getting structured JSON out of unstructured text. I used Langchain with Gemini and Zod for runtime validation. Here's how the Docker image works, the testing pipeline I set up, and what I learned about LLM reliability.",
+    tags: ["LLMs", "Zod", "TypeScript"],
+    readTime: "11 min read",
     featured: false,
   },
   {
-    title: "Multi-Omics Integration is Harder Than You Think",
-    date: "Oct 11, 2021",
-    category: "Opinion",
+    title: "Automating Cytoscape Workflows Saved Me 80% of My Time",
+    date: "Jul 22, 2024",
+    category: "Tutorial",
     excerpt:
-      "Everyone talks about multi-omics like it's just a JOIN query across datasets. Spoiler: it's not. I share the messy reality of combining genomic, transcriptomic, and metabolomic data, and why most integration frameworks oversimplify the problem.",
-    tags: ["Multi-Omics", "Data Integration"],
-    readTime: "7 min read",
+      "Manually running Cytoscape for network visualization was eating hours every week. I wrote a FastAPI wrapper around py4cytoscape, Dockerized it, and added Pydantic validation. Now what took an hour runs in minutes, with standardized SVG outputs every time.",
+    tags: ["FastAPI", "Automation", "Docker"],
+    readTime: "8 min read",
     featured: false,
   },
 ]
@@ -226,7 +226,7 @@ export default function PublicationsSection() {
             Blog & Essays
           </h2>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            Thoughts on bioinformatics, building tools for science, and the messy reality of working at the intersection of code and biology.
+            Thoughts on systems engineering, shipping software, and what I learn building tools across healthcare, bioinformatics, and full-stack development.
           </p>
         </div>
 

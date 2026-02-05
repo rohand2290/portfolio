@@ -4,15 +4,15 @@ import { useRef } from "react"
 
 const PROJECTS = [
   {
-    title: "GenomeScope",
+    title: "Schemaloom",
     description:
-      "End-to-end genomic variant calling pipeline using deep learning. Processes raw sequencing data through quality control, alignment, and variant detection with 99.2% accuracy.",
-    tech: ["Python", "TensorFlow", "GATK", "Nextflow", "AWS"],
+      "LLM-powered schema extraction tool that converts unstructured data into validated JSON using Langchain and Gemini. Ships as a RESTful API with a Docker image for seamless CI/CD integration.",
+    tech: ["TypeScript", "Zod", "Docker", "Hono", "Langchain"],
     gradient: "from-blue-600/20 to-cyan-600/20",
     borderColor: "border-blue-500/30",
     metrics: [
-      { label: "Accuracy", value: "99.2%" },
-      { label: "Samples/Day", value: "500+" },
+      { label: "Deploy Errors", value: "-25%" },
+      { label: "Format", value: "JSON" },
     ],
     icon: (
       <svg
@@ -26,21 +26,21 @@ const PROJECTS = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
-          d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611l-.772.13c-1.687.282-3.393.413-5.113.413s-3.426-.131-5.114-.413l-.771-.13c-1.717-.293-2.3-2.379-1.067-3.61L5 14.5"
+          d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
         />
       </svg>
     ),
   },
   {
-    title: "PharmaPredict",
+    title: "Bruin Bites",
     description:
-      "Machine learning platform for drug-gene interaction prediction. Leverages graph neural networks to identify potential adverse drug reactions before clinical trials.",
-    tech: ["PyTorch", "R", "Neo4j", "Docker", "FastAPI"],
+      "LLM-powered cross-platform app that generates budget-conscious recipes using Langchain and RAG for nutritional and pricing extraction. Led a team using Agile methodologies.",
+    tech: ["Express", "Langchain", "MongoDB", "React Native", "Expo"],
     gradient: "from-emerald-600/20 to-teal-600/20",
     borderColor: "border-emerald-500/30",
     metrics: [
-      { label: "Interactions", value: "1.2M" },
-      { label: "AUC Score", value: "0.94" },
+      { label: "Dev Efficiency", value: "+30%" },
+      { label: "Platform", value: "iOS/Web" },
     ],
     icon: (
       <svg
@@ -54,21 +54,21 @@ const PROJECTS = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
-          d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"
+          d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.871c1.355 0 2.697.056 4.024.166C17.155 8.51 18 9.473 18 10.608v2.513M15 8.25v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m15-3.379a48.474 48.474 0 00-6-.371c-2.032 0-4.034.126-6 .371m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.169c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 013 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 016 13.12M12.265 3.11a.375.375 0 11-.53 0L12 2.845l.265.265z"
         />
       </svg>
     ),
   },
   {
-    title: "MicrobiomeAtlas",
+    title: "CytoFlow",
     description:
-      "Interactive visualization platform for human microbiome data. Maps microbial communities across body sites with taxonomic and functional profiling dashboards.",
-    tech: ["React", "D3.js", "QIIME2", "PostgreSQL", "Go"],
+      "Automated Cytoscape network visualization pipeline built with FastAPI, cutting processing time by 80% and standardizing SVG outputs. Dockerized for scalability with Pydantic validation.",
+    tech: ["FastAPI", "Java", "py4cytoscape", "Docker", "Git"],
     gradient: "from-amber-600/20 to-orange-600/20",
     borderColor: "border-amber-500/30",
     metrics: [
-      { label: "Species Mapped", value: "15K" },
-      { label: "Active Users", value: "2.3K" },
+      { label: "Processing", value: "-80%" },
+      { label: "Output", value: "SVG" },
     ],
     icon: (
       <svg
@@ -82,21 +82,21 @@ const PROJECTS = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
-          d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+          d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
         />
       </svg>
     ),
   },
   {
-    title: "ClinicalNLP",
+    title: "GlutaView",
     description:
-      "Natural language processing engine for extracting structured data from clinical notes. Automates phenotype identification from electronic health records with HIPAA compliance.",
-    tech: ["Python", "spaCy", "BERT", "Elasticsearch", "FHIR"],
+      "Full-stack bioinformatics tool for exploring a 10,000+ protein dataset. Features a Next.js REST layer, React/Tailwind UI, and PostgreSQL with caching that boosted query performance by 40%.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Jupyter"],
     gradient: "from-rose-600/20 to-pink-600/20",
     borderColor: "border-rose-500/30",
     metrics: [
-      { label: "F1 Score", value: "0.91" },
-      { label: "Notes Processed", value: "2M+" },
+      { label: "Query Perf", value: "+40%" },
+      { label: "Proteins", value: "10K+" },
     ],
     icon: (
       <svg
@@ -110,7 +110,7 @@ const PROJECTS = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
-          d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+          d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
         />
       </svg>
     ),
@@ -201,7 +201,7 @@ export default function ProjectsSection() {
       <div className="mx-auto max-w-4xl px-6 lg:px-12">
         <div className="mb-12">
           <p className="mb-2 text-sm font-medium uppercase tracking-[0.2em] text-primary">
-            Research & Development
+            What I{"'"}ve Built
           </p>
           <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
             Featured Projects

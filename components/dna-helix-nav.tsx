@@ -15,7 +15,7 @@ const SECTIONS: Section[] = [
   { id: "hero", label: "Home", color: "#38bdf8" },
   { id: "projects", label: "Projects", color: "#3b82f6" },
   { id: "experience", label: "Experience", color: "#ef4444" },
-  { id: "publications", label: "Publications", color: "#22c55e" },
+  { id: "publications", label: "Blog", color: "#22c55e" },
   { id: "photography", label: "Photography", color: "#eab308" },
   { id: "contact", label: "Contact", color: "#38bdf8" },
 ]

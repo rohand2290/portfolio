@@ -3,8 +3,8 @@
 const LINKS = [
   {
     label: "Email",
-    href: "mailto:hello@example.com",
-    value: "hello@example.com",
+    href: "mailto:rbdeshpande@ucla.edu",
+    value: "rbdeshpande@ucla.edu",
     icon: (
       <svg
         className="h-5 w-5"
@@ -24,8 +24,8 @@ const LINKS = [
   },
   {
     label: "GitHub",
-    href: "https://github.com",
-    value: "github.com/biodev",
+    href: "https://github.com/rohand2290",
+    value: "github.com/rohand2290",
     icon: (
       <svg
         className="h-5 w-5"
@@ -39,8 +39,8 @@ const LINKS = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
-    value: "linkedin.com/in/biodev",
+    href: "https://linkedin.com/in/rohan-deshpande",
+    value: "linkedin.com/in/rohan-deshpande",
     icon: (
       <svg
         className="h-5 w-5"
@@ -132,9 +132,9 @@ export default function ContactSection() {
           Connect
         </h2>
         <p className="mx-auto mb-12 max-w-md text-muted-foreground">
-          Interested in collaborating on bioinformatics research, healthcare
-          data projects, or just want to chat about science and code? Reach
-          out through any of the channels below.
+          Interested in collaborating on a project, talking about full-stack
+          engineering, or just want to connect? Reach out through any of the
+          channels below.
         </p>
 
         <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2">
@@ -169,8 +169,8 @@ export default function ContactSection() {
             Designed & built with React, Three.js, and Tailwind CSS
           </p>
           <p className="mt-1 text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Bioinformatics Portfolio. All
-            rights reserved.
+            &copy; {new Date().getFullYear()} Rohan Deshpande. All rights
+            reserved.
           </p>
         </div>
       </div>

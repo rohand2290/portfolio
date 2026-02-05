@@ -106,20 +106,20 @@ export default function HeroSection() {
       <div className="relative z-10 mx-auto w-full max-w-4xl px-6 py-24 lg:px-12">
         <div className="animate-fade-in-up">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-primary">
-            Bioinformatics & Healthcare
+            Software Engineer
           </p>
           <h1 className="mb-6 text-balance text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl">
-            Bridging Biology
+            Rohan
             <br />
             <span className="text-glow text-primary">
-              {"& Computation"}
+              Deshpande
             </span>
           </h1>
           <p className="mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Working at the intersection of genomics, data science, and
-            healthcare to transform biological data into actionable insights.
-            From sequence analysis to machine learning pipelines, I build the
-            tools that advance precision medicine.
+            Math/CS student at UCLA building full-stack systems, containerized
+            APIs, and data-driven tools. From modernizing veteran healthcare
+            platforms to shipping bioinformatics applications, I write code
+            that ships fast and scales well.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -154,10 +154,10 @@ export default function HeroSection() {
         {/* Stats bar */}
         <div className="mt-20 grid grid-cols-2 gap-6 border-t border-border pt-10 md:grid-cols-4">
           {[
-            { label: "Publications", value: "12+" },
-            { label: "Genomes Analyzed", value: "50K+" },
-            { label: "ML Models Deployed", value: "8" },
-            { label: "Years Experience", value: "6+" },
+            { label: "Projects Shipped", value: "6+" },
+            { label: "Latency Reduced", value: "30%" },
+            { label: "Deploy Time Cut", value: "75%" },
+            { label: "UCLA GPA", value: "3.73" },
           ].map((stat) => (
             <div key={stat.label}>
               <p className="text-3xl font-bold text-primary">{stat.value}</p>

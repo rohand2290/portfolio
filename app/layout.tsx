@@ -14,9 +14,9 @@ const sourceSerif = Source_Serif_4({
 })
 
 export const metadata: Metadata = {
-  title: "Bioinformatics Portfolio | Bridging Biology & Computation",
+  title: "Rohan Deshpande | Software Engineer",
   description:
-    "Portfolio of a bioinformatics and healthcare professional working at the intersection of biology, data, and code.",
+    "Portfolio of Rohan Deshpande — software engineer building at the intersection of systems, data, and full-stack development.",
 }
 
 export const viewport: Viewport = {
