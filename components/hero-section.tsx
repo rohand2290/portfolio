@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import Image from "next/image"
 
 function NetworkCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -103,8 +104,9 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-4xl px-6 py-24 lg:px-12">
-        <div className="animate-fade-in-up">
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center gap-12 px-6 py-24 md:flex-row md:gap-16 lg:px-12">
+        {/* Text content */}
+        <div className="animate-fade-in-up flex-1">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-primary">
             Software Engineer
           </p>
@@ -151,21 +153,24 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Stats bar */}
-        <div className="mt-20 grid grid-cols-2 gap-6 border-t border-border pt-10 md:grid-cols-4">
-          {[
-            { label: "Projects Shipped", value: "6+" },
-            { label: "Latency Reduced", value: "30%" },
-            { label: "Deploy Time Cut", value: "75%" },
-            { label: "UCLA GPA", value: "3.73" },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <p className="text-3xl font-bold text-primary">{stat.value}</p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+        {/* Headshot */}
+        <div className="animate-fade-in-up relative flex-shrink-0">
+          <div className="relative h-72 w-72 overflow-hidden rounded-2xl border-2 border-primary/20 shadow-lg shadow-primary/10 md:h-80 md:w-80">
+            <Image
+              src="/images/rohan-headshot.jpg"
+              alt="Rohan Deshpande"
+              fill
+              priority
+              className="object-cover object-top"
+              style={{ transform: "scale(1.15)" }}
+              sizes="(max-width: 768px) 288px, 320px"
+            />
+          </div>
+          {/* Decorative ring */}
+          <div
+            className="absolute -inset-3 -z-10 rounded-2xl border border-primary/10"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </section>
