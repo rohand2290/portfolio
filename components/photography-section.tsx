@@ -3,44 +3,7 @@
 import { useState, useCallback } from "react"
 import Image from "next/image"
 
-const PHOTOS = [
-  {
-    src: "/images/landscape-1.jpg",
-    title: "Alpine Reflections",
-    location: "Swiss Alps, Switzerland",
-    aspect: "tall",
-  },
-  {
-    src: "/images/landscape-2.jpg",
-    title: "Coastal Twilight",
-    location: "Big Sur, California",
-    aspect: "wide",
-  },
-  {
-    src: "/images/landscape-3.jpg",
-    title: "Misty Redwoods",
-    location: "Muir Woods, California",
-    aspect: "tall",
-  },
-  {
-    src: "/images/landscape-4.jpg",
-    title: "Desert Dunes",
-    location: "Sahara Desert, Morocco",
-    aspect: "wide",
-  },
-  {
-    src: "/images/landscape-5.jpg",
-    title: "Northern Lights",
-    location: "Tromso, Norway",
-    aspect: "wide",
-  },
-  {
-    src: "/images/landscape-6.jpg",
-    title: "Terraced Fields",
-    location: "Bali, Indonesia",
-    aspect: "tall",
-  },
-]
+const PHOTOS: { src: string; title: string; location: string; aspect: "tall" | "wide" }[] = []
 
 function Lightbox({
   photo,
@@ -191,15 +154,15 @@ export default function PhotographySection() {
       <div className="mx-auto max-w-4xl px-6 lg:px-12">
         <div className="mb-12">
           <p className="mb-2 text-sm font-medium uppercase tracking-[0.2em] text-dna-gold">
-            Beyond the Lab
+            Beyond School
           </p>
           <h2 className="text-balance text-3xl font-bold text-foreground md:text-4xl">
             Landscape Photography
           </h2>
           <p className="mt-3 max-w-lg text-muted-foreground">
-            When I step away from the terminal, I explore the natural world
-            through a different lens. These landscapes remind me of the
-            beautiful complexity found in nature at every scale.
+            Sometimes I like to take a day trip on a less busy day and just take some pictures.
+            Here are some of my current ones.
+            I'm trying to get into photography more and make it more consistent; this and writing are the ways I try to have a creative outlet. 
           </p>
         </div>
 
