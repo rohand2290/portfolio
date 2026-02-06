@@ -10,26 +10,6 @@ const PROJECTS = [
     tech: ["TypeScript", "Zod", "Docker", "Hono", "Langchain"],
     gradient: "from-blue-600/20 to-cyan-600/20",
     borderColor: "border-blue-500/30",
-    metrics: [
-      { label: "Deploy Errors", value: "-25%" },
-      { label: "Format", value: "JSON" },
-    ],
-    icon: (
-      <svg
-        className="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
-        />
-      </svg>
-    ),
   },
   {
     title: "Bruin Bites",
@@ -38,26 +18,6 @@ const PROJECTS = [
     tech: ["Express", "Langchain", "MongoDB", "React Native", "Expo"],
     gradient: "from-emerald-600/20 to-teal-600/20",
     borderColor: "border-emerald-500/30",
-    metrics: [
-      { label: "Dev Efficiency", value: "+30%" },
-      { label: "Platform", value: "iOS/Web" },
-    ],
-    icon: (
-      <svg
-        className="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.871c1.355 0 2.697.056 4.024.166C17.155 8.51 18 9.473 18 10.608v2.513M15 8.25v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m15-3.379a48.474 48.474 0 00-6-.371c-2.032 0-4.034.126-6 .371m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.169c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 013 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 016 13.12M12.265 3.11a.375.375 0 11-.53 0L12 2.845l.265.265z"
-        />
-      </svg>
-    ),
   },
   {
     title: "CytoFlow",
@@ -66,26 +26,6 @@ const PROJECTS = [
     tech: ["FastAPI", "Java", "py4cytoscape", "Docker", "Git"],
     gradient: "from-amber-600/20 to-orange-600/20",
     borderColor: "border-amber-500/30",
-    metrics: [
-      { label: "Processing", value: "-80%" },
-      { label: "Output", value: "SVG" },
-    ],
-    icon: (
-      <svg
-        className="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
-        />
-      </svg>
-    ),
   },
   {
     title: "GlutaView",
@@ -94,26 +34,6 @@ const PROJECTS = [
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Jupyter"],
     gradient: "from-rose-600/20 to-pink-600/20",
     borderColor: "border-rose-500/30",
-    metrics: [
-      { label: "Query Perf", value: "+40%" },
-      { label: "Proteins", value: "10K+" },
-    ],
-    icon: (
-      <svg
-        className="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
-        />
-      </svg>
-    ),
   },
 ]
 
@@ -133,14 +53,9 @@ function ProjectCard({
     >
       {/* Header */}
       <div className="mb-4 flex items-start justify-between">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-card/60 text-primary">
-            {project.icon}
-          </div>
-          <h3 className="text-lg font-bold text-foreground">
-            {project.title}
-          </h3>
-        </div>
+        <h3 className="text-lg font-bold text-foreground">
+          {project.title}
+        </h3>
         <span className="text-xs text-muted-foreground">
           0{index + 1}
         </span>
@@ -150,16 +65,6 @@ function ProjectCard({
       <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
         {project.description}
       </p>
-
-      {/* Metrics */}
-      <div className="mb-5 flex gap-6">
-        {project.metrics.map((metric) => (
-          <div key={metric.label}>
-            <p className="text-xl font-bold text-foreground">{metric.value}</p>
-            <p className="text-xs text-muted-foreground">{metric.label}</p>
-          </div>
-        ))}
-      </div>
 
       {/* Tech stack */}
       <div className="flex flex-wrap gap-2">

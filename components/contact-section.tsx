@@ -4,7 +4,7 @@ const LINKS = [
   {
     label: "Email",
     href: "mailto:rbdeshpande@ucla.edu",
-    value: "rbdeshpande@ucla.edu",
+    value: "rbdeshpande [at] ucla [dot] edu",
     icon: (
       <svg
         className="h-5 w-5"
@@ -39,7 +39,7 @@ const LINKS = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/rohan-deshpande",
+    href: "https://www.linkedin.com/in/rohan-deshpande-423b36235/",
     value: "linkedin.com/in/rohan-deshpande",
     icon: (
       <svg
