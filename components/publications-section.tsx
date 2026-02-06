@@ -210,10 +210,9 @@ function BlogCard({ post }: { post: (typeof POSTS)[0] }) {
 export default function PublicationsSection() {
   const [filter, setFilter] = useState("All")
 
-  const featured = POSTS.filter((p) => p.featured)
-  const regular = filter === "All"
-    ? POSTS.filter((p) => !p.featured)
-    : POSTS.filter((p) => p.category === filter && !p.featured)
+  const filtered = filter === "All" ? POSTS : POSTS.filter((p) => p.category === filter)
+  const featured = filtered.filter((p) => p.featured)
+  const regular = filtered.filter((p) => !p.featured)
 
   return (
     <section id="publications" className="py-24">
@@ -249,7 +248,7 @@ export default function PublicationsSection() {
         </div>
 
         {/* Featured posts */}
-        {filter === "All" && featured.length > 0 && (
+        {featured.length > 0 && (
           <div className="mb-6 grid gap-5">
             {featured.map((post) => (
               <FeaturedPost key={post.title} post={post} />

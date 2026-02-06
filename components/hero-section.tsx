@@ -51,7 +51,7 @@ function NetworkCanvas() {
           const dist = Math.sqrt(dx * dx + dy * dy)
           if (dist < 150) {
             ctx.beginPath()
-            ctx.moveTo(nodes[i].x, nodes[j].y)
+            ctx.moveTo(nodes[i].x, nodes[i].y)
             ctx.lineTo(nodes[j].x, nodes[j].y)
             ctx.strokeStyle = `rgba(56, 189, 248, ${0.08 * (1 - dist / 150)})`
             ctx.lineWidth = 1
@@ -113,7 +113,7 @@ export default function HeroSection() {
           <h1 className="mb-6 text-balance text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl">
             Rohan
             <br />
-            <span className="text-glow text-primary">
+            <span className="text-primary">
               Deshpande
             </span>
           </h1>
@@ -126,7 +126,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="glow-cyan group inline-flex items-center gap-2 rounded-lg border border-primary bg-primary/10 px-6 py-3 text-sm font-medium text-primary transition-all hover:bg-primary/20"
+              className="group inline-flex items-center gap-2 rounded-lg border border-primary bg-primary/10 px-6 py-3 text-sm font-medium text-primary transition-all hover:bg-primary/20"
             >
               View Projects
               <svg
@@ -155,7 +155,7 @@ export default function HeroSection() {
 
         {/* Headshot */}
         <div className="animate-fade-in-up relative flex-shrink-0">
-          <div className="relative h-72 w-72 overflow-hidden rounded-2xl border-2 border-primary/20 shadow-lg shadow-primary/10 md:h-80 md:w-80">
+            <div className="relative h-72 w-72 overflow-hidden rounded-2xl border-2 border-primary/20 md:h-80 md:w-80">
             <Image
               src="/images/rohan-headshot.jpg"
               alt="Rohan Deshpande"
