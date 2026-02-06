@@ -161,8 +161,8 @@ export default function HeroSection() {
               alt="Rohan Deshpande"
               fill
               priority
-              className="object-cover object-top"
-              style={{ transform: "scale(1.15)" }}
+              className="object-cover"
+              style={{ transform: "scale(1.25)", transformOrigin: "50% 30%" }}
               sizes="(max-width: 768px) 288px, 320px"
             />
           </div>
