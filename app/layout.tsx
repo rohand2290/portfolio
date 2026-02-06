@@ -1,16 +1,23 @@
 import React from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter, Source_Serif_4 } from "next/font/google"
+import { IBM_Plex_Sans, Playfair_Display, IBM_Plex_Mono } from "next/font/google"
 import "./globals.css"
 
-const inter = Inter({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-ibm-plex-sans",
 })
 
-const sourceSerif = Source_Serif_4({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-source-serif",
+  variable: "--font-playfair",
+})
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-ibm-plex-mono",
 })
 
 export const metadata: Metadata = {
@@ -29,7 +36,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${sourceSerif.variable}`}>
+    <html
+      lang="en"
+      className={`${ibmPlexSans.variable} ${playfairDisplay.variable} ${ibmPlexMono.variable}`}
+    >
       <body className="font-sans antialiased">{children}</body>
     </html>
   )

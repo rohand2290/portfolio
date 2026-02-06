@@ -11,8 +11,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"],
-        serif: ["var(--font-source-serif)"],
+        sans: ["var(--font-ibm-plex-sans)"],
+        serif: ["var(--font-playfair)"],
+        mono: ["var(--font-ibm-plex-mono)"],
       },
       colors: {
         background: "hsl(var(--background))",
