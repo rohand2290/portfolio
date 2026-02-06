@@ -53,9 +53,9 @@ const LINKS = [
     ),
   },
   {
-    label: "Google Scholar",
-    href: "https://scholar.google.com",
-    value: "scholar.google.com",
+    label: "X",
+    href: "https://x.com/rohand2290",
+    value: "x.com/rohand2290",
     icon: (
       <svg
         className="h-5 w-5"
@@ -63,7 +63,7 @@ const LINKS = [
         fill="currentColor"
         aria-hidden="true"
       >
-        <path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 9a8 8 0 017.162 4.44L24 9.5z" />
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
       </svg>
     ),
   },
@@ -126,15 +126,13 @@ export default function ContactSection() {
 
       <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-12">
         <p className="mb-2 text-sm font-medium uppercase tracking-[0.2em] text-primary">
-          Let{"'"}s Collaborate
+          Reach Out
         </p>
         <h2 className="mb-4 text-balance text-3xl font-bold text-foreground md:text-4xl">
           Connect
         </h2>
         <p className="mx-auto mb-12 max-w-md text-muted-foreground">
-          Interested in collaborating on a project, talking about full-stack
-          engineering, or just want to connect? Reach out through any of the
-          channels below.
+          Interested in distributed systems/healthtech, thought any of my articles were interesting, or would like to suggest me new photo spots? Let's connect. 
         </p>
 
         <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2">
