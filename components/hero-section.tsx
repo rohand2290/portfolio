@@ -119,7 +119,7 @@ export default function HeroSection() {
           </h1>
           <p className="mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground">
           Hey! I'm Rohan Deshpande, a Math/CS student at UCLA interested in building distributed systems, focused in the healthcare industry.
-          From current work optimizing veteran healthcare systems to past work in developing scalable bioinformatics applications, I like to build industry-scale applications which are resilient.
+          From current work optimizing veteran healthcare systems to past work in developing scalable bioinformatics applications, I like to build applications which are resilient, modular, and can handle large amounts of users.
           </p>
           <p className="mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Before I switched my major, I was originally a Computational Biology student on the premed track.
