@@ -104,7 +104,7 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center gap-12 px-6 py-24 md:flex-row md:gap-16 lg:px-12">
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center gap-12 px-4 py-16 md:flex-row md:gap-16 lg:px-8">
         {/* Text content */}
         <div className="animate-fade-in-up flex-1">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-primary">
