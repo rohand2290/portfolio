@@ -16,7 +16,35 @@ However, I wanted to revamp my portfolio page, so I initially used v0 to generat
 
 ## Answer: MDX
 MDX was a way for me to embed markdown into my Next.js website. 
-It allowed me the flexibility of Markdown with modern React.
+It allowed me the flexibility of Markdown with modern React, allowing me to generate the static site the same way I always did.
+
+## Architecture overview
+The system has 3 layers: content, processing, and rendering. 
+
+### Content Layer 
+Posts are located in the `.mdx` files in `content/blog/`.
+Each file has a YAML formatter at the top, followed by the actual content written in markdown. 
+The filename becomes the URL: `hello-world.mdx` becomes `/blog/hello-world.`
+
+### Processing Layer
+The engine uses 2 libraries:
+- `gray-matter` to parse the YAML formatter out of each `.mdx` file.
+- `reading-time` to scan content and estimate a read time. 
+
+It exposes 4 functions, namely:
+- `getAllPosts()`: reads every `.mdx` file, extracts the metadata, filters out unpublished drafts, and sorts by date.
+- `getPostBySlug(slug)`: fetches a single post's metadata and raw content
+- `getAllTags() / getPostsByTag()` - aggregates tags across all posts for tag-based filtering.
+
+### Rendering Layer 
+The blog has 3 routes, all generated at build time:
+- `/blog` - lists all posts 
+- `/blog/[slug]` - individual post page
+- `/blog/tags/[tag]` - posts filtered by tag
+
+
+
+
 
 
 
