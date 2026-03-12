@@ -22,13 +22,7 @@ export default function BlogLayout({
             >
               Blog
             </Link>
-            <Link
-              href="/roadmap"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Roadmap
-            </Link>
-            <Link
+<Link
               href="/"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
