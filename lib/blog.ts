@@ -1,9 +1,6 @@
-import fs from "fs"
-import path from "path"
-import matter from "gray-matter"
 import readingTime from "reading-time"
-
-const BLOG_DIR = path.join(process.cwd(), "content/blog")
+import type { ContentSource, RawPost } from "./content-source"
+import { markdownSource } from "./sources/markdown-source"
 
 export interface BlogPostMeta {
   slug: string
@@ -28,58 +25,42 @@ export function slugifyTag(tag: string): string {
     .replace(/(^-|-$)/g, "")
 }
 
-export function getAllPosts(): BlogPostMeta[] {
-  if (!fs.existsSync(BLOG_DIR)) return []
+function rawToMeta(raw: RawPost): BlogPostMeta {
+  const fm = raw.frontmatter
+  const stats = readingTime(raw.content)
+  return {
+    slug: raw.slug,
+    title: (fm.title as string) ?? raw.slug,
+    date: (fm.date as string) ?? "",
+    excerpt: (fm.excerpt as string) ?? "",
+    category: (fm.category as string) ?? "Post",
+    tags: (fm.tags as string[]) ?? [],
+    readTime: stats.text,
+    published: fm.published !== false,
+  }
+}
 
-  const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".mdx"))
-
-  const posts = files.map((filename) => {
-    const slug = filename.replace(/\.mdx$/, "")
-    const filePath = path.join(BLOG_DIR, filename)
-    const raw = fs.readFileSync(filePath, "utf-8")
-    const { data, content } = matter(raw)
-    const stats = readingTime(content)
-
-    return {
-      slug,
-      title: data.title ?? slug,
-      date: data.date ?? "",
-      excerpt: data.excerpt ?? "",
-      category: data.category ?? "Post",
-      tags: (data.tags as string[]) ?? [],
-      readTime: stats.text,
-      published: data.published !== false,
-    } satisfies BlogPostMeta
-  })
-
-  return posts
+export function getAllPosts(source: ContentSource = markdownSource): BlogPostMeta[] {
+  return source
+    .getRawPosts()
+    .map(rawToMeta)
     .filter((p) => p.published)
     .sort((a, b) => (a.date > b.date ? -1 : 1))
 }
 
-export function getPostBySlug(slug: string): BlogPost | null {
-  const filePath = path.join(BLOG_DIR, `${slug}.mdx`)
-  if (!fs.existsSync(filePath)) return null
-
-  const raw = fs.readFileSync(filePath, "utf-8")
-  const { data, content } = matter(raw)
-  const stats = readingTime(content)
-
-  return {
-    slug,
-    title: data.title ?? slug,
-    date: data.date ?? "",
-    excerpt: data.excerpt ?? "",
-    category: data.category ?? "Post",
-    tags: (data.tags as string[]) ?? [],
-    readTime: stats.text,
-    published: data.published !== false,
-    content,
-  }
+export function getPostBySlug(
+  slug: string,
+  source: ContentSource = markdownSource
+): BlogPost | null {
+  const raw = source.getRawPost(slug)
+  if (!raw) return null
+  return { ...rawToMeta(raw), content: raw.content }
 }
 
-export function getAllTags(): { tag: string; slug: string; count: number }[] {
-  const posts = getAllPosts()
+export function getAllTags(
+  source: ContentSource = markdownSource
+): { tag: string; slug: string; count: number }[] {
+  const posts = getAllPosts(source)
   const tagMap = new Map<string, { tag: string; count: number }>()
 
   for (const post of posts) {
@@ -99,8 +80,11 @@ export function getAllTags(): { tag: string; slug: string; count: number }[] {
     .sort((a, b) => b.count - a.count)
 }
 
-export function getPostsByTag(tagSlug: string): BlogPostMeta[] {
-  return getAllPosts().filter((post) =>
+export function getPostsByTag(
+  tagSlug: string,
+  source: ContentSource = markdownSource
+): BlogPostMeta[] {
+  return getAllPosts(source).filter((post) =>
     post.tags.some((t) => slugifyTag(t) === tagSlug)
   )
 }
